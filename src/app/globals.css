@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+/* Definições de Variáveis */
+:root {
+  --background: #f8fafc;
+  --foreground: #171717;
+  --primary: #0f172a;
+  --secondary: #10b981;
+  --secondary-dark: #006c49;
+  --tertiary: #f59e0b;
+  --inverted: #f8fafc;
+  --navbar: #f7f9fb;
+  --footer: #273449;
+  --benefits: #f2f4f6;
+}
+
+[data-theme="dark"] {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --primary: #f8fafc;
+  --secondary: #10b981;
+  --secondary-dark: #006c49;
+  --tertiary: #f59e0b;
+  --inverted: #0f172a;
+  --navbar: #273449;
+  --footer: #273449;
+  --benefits: #1e293b;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-secondary-dark: var(--secondary-dark);
+  --color-tertiary: var(--tertiary);
+  --color-inverted: var(--inverted);
+  --color-navbar: var(--navbar);
+  --color-footer: var(--footer);
+  --color-benefits: var(--benefits);
+
+  --font-headline: var(--font-montserrat);
+  --font-sans: var(--font-inter);
+}
+
+@layer components {
+  .site-container {
+    @apply w-full mx-auto px-6 md:px-8 max-w-360;
+  }
+}
+
+@keyframes pulse-slow {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease; /* Transição suave entre temas */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-headline);
+}
+
+/* Scrollbar Personalizada */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background) !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8 !important; /* Cinza slate-400 */
+  border: 2px solid var(--background) !important;
+  border-radius: 10px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Força a cor do hover com box-shadow inset para garantir a visibilidade do verde */
+::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:active {
+  background: #10b981 !important; /* Cor exata do seu secondary */
+  box-shadow: inset 0 0 0 10px #10b981 !important;
+}
+
+/* Modo Dark - Chrome/Edge/Safari */
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #475569 !important; /* Slate-600 */
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover,
+[data-theme="dark"] ::-webkit-scrollbar-thumb:active {
+  background: #10b981 !important;
+  box-shadow: inset 0 0 0 10px #10b981 !important;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 var(--background);
+}
+
+[data-theme="dark"] * {
+  scrollbar-color: #475569 var(--background);
+}
