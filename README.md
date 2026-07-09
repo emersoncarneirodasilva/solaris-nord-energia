@@ -66,7 +66,7 @@ Abra [http://localhost:3000](https://www.google.com/search?q=http://localhost:30
 Este projeto faz parte do meu portfólio profissional. Sou um desenvolvedor focado em criar soluções que não apenas funcionam tecnicamente, mas que trazem resultados reais para o negócio dos meus clientes.
 
 * **GitHub:** [@emersoncarneirodasilva](https://github.com/emersoncarneirodasilva)
-* **LinkedIn:** [Insira o link do seu perfil aqui]
+* **LinkedIn:** https://www.linkedin.com/in/emerson-carneiro-da-silva/
 
 ## 📝 Licença
 
