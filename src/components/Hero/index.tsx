@@ -1,7 +1,7 @@
 import Image from "next/image";
-import house from "../../../public/images/hero-image.webp";
-import { CheckCircle } from "lucide-react";
 import Link from "next/link";
+import { CheckCircle } from "lucide-react";
+import house from "../../../public/images/hero-image.webp";
 
 export default function Hero() {
   // Define o número de telefone do .env

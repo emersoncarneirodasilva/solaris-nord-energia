@@ -1,5 +1,5 @@
-import { TrendingUp, Landmark } from "lucide-react";
 import Link from "next/link";
+import { TrendingUp, Landmark } from "lucide-react";
 
 export default function Benefits() {
   return (
