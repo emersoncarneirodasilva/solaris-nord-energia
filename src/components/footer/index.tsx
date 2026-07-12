@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { links } from "@/src/Constants/links";
 import logo from "../../../public/images/logo.webp";
 
 export default function Footer() {
@@ -108,13 +109,13 @@ export default function Footer() {
               Links Rápidos
             </h3>
             <nav className="flex flex-col gap-2">
-              {["Benefícios", "Processo", "Depoimentos", "FAQ"].map((item) => (
+              {links.map((item) => (
                 <Link
-                  key={item}
-                  href={getHref(`#${item.toLowerCase()}`)}
+                  key={item.name}
+                  href={getHref(item.href)}
                   className="text-sm text-slate-400 hover:text-secondary transition-colors"
                 >
-                  {item}
+                  {item.name}
                 </Link>
               ))}
             </nav>

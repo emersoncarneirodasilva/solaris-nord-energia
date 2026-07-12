@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation"; // Importação necessária
 import { Menu, X } from "lucide-react";
 import logo from "../../../public/images/logo.webp";
 import { ThemeToggle } from "../ThemeToggle";
+import { links } from "@/src/Constants/links";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,13 +16,6 @@ export default function Navbar() {
   const PHONE_NUMBER = process.env.NEXT_PUBLIC_PHONE || "";
   const message = "Olá! Gostaria de mais informações sobre energia solar.";
   const whatsappUrl = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(message)}`;
-
-  const links = [
-    { name: "Benefícios", href: "#beneficios" },
-    { name: "Processo", href: "#processo" },
-    { name: "Depoimentos", href: "#depoimentos" },
-    { name: "FAQ", href: "#faq" },
-  ];
 
   // Lógica para garantir que os links de âncora funcionem de qualquer página
   const getHref = (href: string) => {
